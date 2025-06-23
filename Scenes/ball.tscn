@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cthf6f3f7d410" path="res://Scripts/ball.gd" id="1_ij5cq"]
 [ext_resource type="Texture2D" uid="uid://djtsdc4pdh4qx" path="res://Sprites/ball_1.png" id="2_yk4cr"]
-[ext_resource type="AudioStream" uid="uid://bpt15cqnlk06j" path="res://Sounds/ball bounce sound.wav" id="3_376qj"]
+[ext_resource type="AudioStream" uid="uid://b4oa5rxgov7l8" path="res://Sounds/bounce_sfx_pong.ogg" id="3_yk4cr"]
 [ext_resource type="PackedScene" uid="uid://jysedhlucb84" path="res://Scenes/trail_2d.tscn" id="4_yk4cr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yk4cr"]
@@ -21,7 +21,7 @@ position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_yk4cr")
 
 [node name="sfx_bounce" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_376qj")
+stream = ExtResource("3_yk4cr")
 volume_db = -4.0
 
 [node name="trail2D" parent="." instance=ExtResource("4_yk4cr")]

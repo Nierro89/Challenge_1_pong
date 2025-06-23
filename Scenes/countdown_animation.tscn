@@ -7,7 +7,6 @@ font = ExtResource("1_7do3s")
 font_size = 200
 font_color = Color(0.0470588, 0.64663, 0.854902, 1)
 outline_size = 20
-outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_w0q30"]
 length = 0.001
