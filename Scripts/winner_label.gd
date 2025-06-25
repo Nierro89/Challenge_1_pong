@@ -6,10 +6,10 @@ extends Label
 
 func _ready():
 	if(Global.P1_Score > Global.P2_Score):
-		text = "Red Wins!"
+		text = "red wins!"
 		gamov_sfx.play()
 	else:
-		text = "Blue Wins!"
+		text = "blue wins!"
 		gamov_sfx.play()
 
 

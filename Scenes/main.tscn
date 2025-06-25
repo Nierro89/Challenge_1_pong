@@ -74,3 +74,4 @@ expand_mode = 1
 [node name="music_bg" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_6bp64")
 volume_db = 1.0
+bus = &"music"

@@ -1,12 +1,11 @@
-[gd_scene load_steps=19 format=4 uid="uid://ba2ibp0utxvvy"]
+[gd_scene load_steps=17 format=4 uid="uid://b8wem4veih3xf"]
 
-[ext_resource type="FontFile" uid="uid://bky6yu22q3u5p" path="res://fonts/VortexDancerLaserItalic-6Rp5A.otf" id="1_6mhyf"]
-[ext_resource type="Texture2D" uid="uid://ccblk7f0dgg6s" path="res://Sprites/pongBG.png" id="1_kbl72"]
-[ext_resource type="Script" uid="uid://crxoal5iqihkb" path="res://Scripts/winner_label.gd" id="2_h3fnl"]
-[ext_resource type="AudioStream" uid="uid://cvfwseeax5l0i" path="res://Sounds/Gamov_sfx_pong.ogg" id="3_h3fnl"]
-[ext_resource type="Script" uid="uid://c40uga035nab7" path="res://Scripts/play_again.gd" id="3_kbl72"]
-[ext_resource type="Script" uid="uid://bbfoj2frs6w8q" path="res://Scripts/quit.gd" id="4_fkpik"]
-[ext_resource type="PackedScene" uid="uid://c7fxawhe1yxte" path="res://Scenes/score_ui(h_box).tscn" id="5_tss2i"]
+[ext_resource type="Script" uid="uid://he0wyydq03f2" path="res://Scripts/settings.gd" id="1_aaqfp"]
+[ext_resource type="Texture2D" uid="uid://ccblk7f0dgg6s" path="res://Sprites/pongBG.png" id="2_j2dne"]
+[ext_resource type="FontFile" uid="uid://cjhwwl8hvt21l" path="res://fonts/VortexDancerLaser-5yx5V.otf" id="3_6kysc"]
+[ext_resource type="StyleBox" uid="uid://bifnr01cx6jx5" path="res://Theme/es.tres" id="3_6vr2p"]
+[ext_resource type="FontFile" uid="uid://bky6yu22q3u5p" path="res://fonts/VortexDancerLaserItalic-6Rp5A.otf" id="4_6vr2p"]
+[ext_resource type="AudioStream" uid="uid://bpt15cqnlk06j" path="res://Sounds/ball bounce sound.wav" id="5_j2dne"]
 
 [sub_resource type="Image" id="Image_n45e2"]
 data = {
@@ -998,28 +997,7 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n36ui"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.0470588, 0.647059, 0.854902, 1)
-border_width_left = 15
-border_width_top = 15
-border_width_right = 15
-border_width_bottom = 15
-border_color = Color(0.321569, 0.258824, 0.568627, 1)
-border_blend = true
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 5
-shadow_color = Color(1, 1, 1, 0.6)
-shadow_size = 5
-shadow_offset = Vector2(8, 3)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e446y"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f60ng"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -1055,7 +1033,7 @@ shadow_color = Color(1, 1, 1, 0.635294)
 shadow_size = 5
 shadow_offset = Vector2(8, 3)
 
-[sub_resource type="Theme" id="Theme_kbl72"]
+[sub_resource type="Theme" id="Theme_bismi"]
 Button/colors/font_color = Color(0.321569, 0.258824, 0.568627, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
@@ -1077,79 +1055,73 @@ Button/font_sizes/font_size = 16
 Button/fonts/font = SubResource("FontFile_yhxw7")
 Button/styles/disabled = SubResource("StyleBoxFlat_n45e2")
 Button/styles/focus = SubResource("StyleBoxFlat_opfnp")
-Button/styles/hover = SubResource("StyleBoxFlat_n36ui")
-Button/styles/normal = SubResource("StyleBoxFlat_e446y")
+Button/styles/hover = ExtResource("3_6vr2p")
+Button/styles/normal = SubResource("StyleBoxFlat_f60ng")
 Button/styles/pressed = SubResource("StyleBoxFlat_trj04")
 
-[sub_resource type="LabelSettings" id="LabelSettings_gdxnu"]
-font = ExtResource("1_6mhyf")
-font_size = 90
+[sub_resource type="LabelSettings" id="LabelSettings_f60ng"]
+font_size = 65
 font_color = Color(0.0470588, 0.647059, 0.854902, 1)
 outline_size = 10
 outline_color = Color(0.321569, 0.258824, 0.568627, 1)
 
-[node name="endGame" type="TextureRect"]
+[node name="settings" type="CanvasLayer"]
+script = ExtResource("1_aaqfp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_kbl72")
+texture = ExtResource("2_j2dne")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 152.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_bismi")
 
-[node name="Control" type="Control" parent="VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_kbl72")
+[node name="audio_button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 320.0
+offset_right = 672.0
+offset_bottom = 384.0
+theme_override_fonts/font = ExtResource("4_6vr2p")
+theme_override_font_sizes/font_size = 40
+text = "sound
+"
 
-[node name="PlayAgain" type="Button" parent="VBoxContainer/Control"]
-layout_mode = 2
-offset_left = 392.0
-offset_top = 168.0
-offset_right = 765.0
-offset_bottom = 228.0
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("1_6mhyf")
-theme_override_font_sizes/font_size = 50
-text = "play again"
-script = ExtResource("3_kbl72")
+[node name="return_button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 400.0
+offset_right = 679.0
+offset_bottom = 464.0
+theme_override_fonts/font = ExtResource("4_6vr2p")
+theme_override_font_sizes/font_size = 40
+text = "return"
 
-[node name="Quit" type="Button" parent="VBoxContainer/Control"]
-layout_mode = 2
-offset_left = 504.0
-offset_top = 240.0
-offset_right = 649.0
-offset_bottom = 300.0
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("1_6mhyf")
-theme_override_font_sizes/font_size = 50
-text = "quit"
-script = ExtResource("4_fkpik")
-
-[node name="Winner Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "!winner!"
-label_settings = SubResource("LabelSettings_gdxnu")
+[node name="settings_label" type="Label" parent="."]
+offset_left = 384.0
+offset_top = 128.0
+offset_right = 771.0
+offset_bottom = 194.0
+theme_override_fonts/font = ExtResource("3_6kysc")
+theme_override_font_sizes/font_size = 45
+text = "settings"
+label_settings = SubResource("LabelSettings_f60ng")
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_h3fnl")
 
-[node name="gamov_sfx" type="AudioStreamPlayer" parent="VBoxContainer/Winner Label"]
-stream = ExtResource("3_h3fnl")
+[node name="hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_j2dne")
+bus = &"sfx"
 
-[node name="button" type="AudioStreamPlayer" parent="VBoxContainer/Winner Label"]
-
-[node name="ScoreUi(HBox)" parent="VBoxContainer" instance=ExtResource("5_tss2i")]
-layout_mode = 2
-
-[connection signal="mouse_entered" from="VBoxContainer/Control/PlayAgain" to="VBoxContainer/Winner Label" method="_on_play_again_mouse_entered"]
-[connection signal="mouse_entered" from="VBoxContainer/Control/Quit" to="VBoxContainer/Winner Label" method="_on_quit_mouse_entered"]
+[connection signal="mouse_entered" from="Control/audio_button" to="." method="_on_audio_button_mouse_entered"]
+[connection signal="pressed" from="Control/audio_button" to="." method="_on_audio_button_pressed"]
+[connection signal="mouse_entered" from="Control/return_button" to="." method="_on_return_button_mouse_entered"]
+[connection signal="pressed" from="Control/return_button" to="." method="_on_return_button_pressed"]

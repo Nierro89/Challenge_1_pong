@@ -23,5 +23,6 @@ shape = SubResource("CircleShape2D_yk4cr")
 [node name="sfx_bounce" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_yk4cr")
 volume_db = -4.0
+bus = &"sfx"
 
 [node name="trail2D" parent="." instance=ExtResource("4_yk4cr")]

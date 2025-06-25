@@ -1,7 +1,7 @@
 extends Line2D
 
 @export_category('Trail')
-@export var length : = 10
+@export var length : = 20
 
 @onready var parent : Node2D = get_parent()
 var offset : = Vector2.ZERO
